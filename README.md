@@ -1,5 +1,9 @@
-Check if the email list is valid.
+# Introduction
 
-Check email-list.txt with:
+Check if the emails in a list file are valid.
 
-    python validator.py <email-list>.txt
+# Usage
+
+Check emaillist.txt with:
+
+    python validator.py emaillist.txt
