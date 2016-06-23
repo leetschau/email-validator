@@ -1,14 +1,17 @@
 from validate_email import validate_email
+import DNS
 import sys
 
+DNS.defaults['server'] = ['8.8.8.8', '8.8.4.4']
 RECHECK = 2
+
 inp = sys.argv[1]
 if __name__ == "__main__":
     invalid_mails = []
     with open(inp) as inp:
         for rec in inp:
             receiver = rec.strip()
-            is_valid = validate_email(receiver, verify=True, smtp_timeout=1)
+            is_valid = validate_email(receiver, verify=True, smtp_timeout=5)
             if not is_valid:
                 invalid_mails.append(receiver)
             else:
